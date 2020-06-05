@@ -1,0 +1,171 @@
+#page-create-point {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#page-create-point header {  
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#page-create-point header a {
+    display: flex;
+    font-weight: bold;
+    color: var(--title-color);
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+#page-create-point header a:hover {
+    transition: 400ms;
+    background-color: rgba(255, 255, 255, 0.57);
+}
+
+#page-create-point header a span {
+    display: flex;
+    background-image: url(../extras-aula-1/icones/arrow-left.svg);
+    width: 20px;
+    height: 22px;
+    margin-right: 10px;
+}
+
+#page-create-point form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 90%;
+    margin: 5% auto 10%;
+    overflow: hidden;
+}
+
+#page-create-point form h1 {
+    font-size: 40px;
+}
+
+#page-create-point form fieldset {
+    margin-top: 25px;
+    border: 0;
+}
+
+#page-create-point form legend {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#page-create-point form legend h2 {
+    font-size: 30px;
+}
+
+#page-create-point form legend span {
+    color: var(--title-color);
+}
+
+#page-create-point form .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+#page-create-point form .field-group {
+    display: flex;
+}
+
+#page-create-point form input, 
+#page-create-point form select {
+    background-color: #dcdcdd;
+    border: 0;
+    border-radius: 8px;
+    padding: 16px 24px;
+    font-size: 16px;
+    outline: none;
+}
+
+#page-create-point form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#page-create-point form label {
+    margin-bottom: 8px;
+    color: var(--title-color);
+}
+
+#page-create-point form .field-group .field + .field {
+    margin-left: 20px;
+}
+
+#page-create-point form button {
+    width: 260px;
+    height: 56px;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    border: 0;
+    border-radius: 10px;
+    outline: none;
+    transform: translateX(-100%);
+    margin-left: 100%;
+    margin-top: 40px;
+}
+
+form button:hover {
+    background-color: #207948;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+.items-grid li {
+    background-color: #f5f5f5;
+    height: 200px;
+    list-style: none;
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+    padding: 32px 24px 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.items-grid li:hover {
+    transition: 400ms;
+    background-color: #e1faec;
+    color: var(--title-color);
+}
+
+.items-grid li span {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.items-grid li.selected {
+    background-color: #74fdb2bd;
+    color: var(--title-color);
+    border: 5px solid #25d675bd;
+}
+
+.items-grid li img,
+.items-grid li span {
+    pointer-events: none;
+}
