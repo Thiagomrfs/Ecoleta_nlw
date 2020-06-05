@@ -12,7 +12,7 @@
 {% block content %}         
     {% include "partials/page-header.html" %}
     <main>
-        <form action="">
+        <form action="/savepoint" method="POST">
             <h1>Cadastro do ponto de coleta</h1>
             <fieldset id="dados">
 
@@ -64,27 +64,27 @@
                     <span>Selecione um ou mais itens abaixo</span>
                 </legend>
                 <div class="items-grid">
-                    <li data-id="1">
+                    <li data-id="Lâmpadas">
                         <img src="/extras-aula-1/icones/lampadas.svg" alt="Lâmpadas">
                         <span>Lâmpadas</span>
                     </li>
-                    <li data-id="2">
+                    <li data-id="Pilhas e Baterias">
                         <img src="/extras-aula-1/icones/baterias.svg" alt="Pilhas e Baterias">
                         <span>Pilhas e Baterias</span>
                     </li>
-                    <li data-id="3">
+                    <li data-id="Papéis e Papelões">
                         <img src="/extras-aula-1/icones/papeis-papelao.svg" alt="Papéis e Papelões">
                         <span>Papéis e Papelões</span>
                     </li>
-                    <li data-id="4">
+                    <li data-id="Resíduos Eletrônicos">
                         <img src="/extras-aula-1/icones/eletronicos.svg" alt="Resíduos Eletrônicos">
                         <span>Resíduos Eletrônicos</span>
                     </li>
-                    <li data-id="5">
+                    <li data-id="Resíduos Orgânicos">
                         <img src="/extras-aula-1/icones/organicos.svg" alt="Resíduos Orgânicos">
                         <span>Resíduos Orgânicos</span>
                     </li>
-                    <li data-id="6">
+                    <li data-id="Óleo de Cozinha">
                         <img src="/extras-aula-1/icones/oleo.svg" alt="Óleo de Cozinha">
                         <span>Óleo de Cozinha</span>
                     </li>
