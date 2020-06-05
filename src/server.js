@@ -45,22 +45,20 @@ server.post("/savepoint", (req, res) => {
         items
     ) VALUES (?,?,?,?,?,?,?);`
     const values = [
-        "https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=801&q=80",
-        "Colectoria",
-        "Guilherme Gemballa",
-        "Nº 260",
-        "Santa Catarina",
-        "Rio do Sul",
-        "Resíduos Eletrônicos, Lâmpadas"
+        `${data["image"]}`,
+        `${data["name"]}`,
+        `${data["address"]}`,
+        `${data["address2"]}`,
+        `${data["state"]}`,
+        `${data["city"]}`,
+        `${data["selected-items"]}`
     ]
     
     db.run(query, values, function(err) {
         if (err) {
             console.log(err)
         }
-
         console.log("cadastrado com sucesso")
-        console.log(this)
     })
 
 })
