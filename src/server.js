@@ -30,8 +30,6 @@ server.get("/create-point", (req, res) => {
 })
 
 server.post("/savepoint", (req, res) => {
-    // query strings da url
-    // const userQuery = req.query
     const data = req.body
 
     const query = ` 
@@ -45,30 +43,38 @@ server.post("/savepoint", (req, res) => {
         items
     ) VALUES (?,?,?,?,?,?,?);`
     const values = [
-        `${data["image"]}`,
-        `${data["name"]}`,
-        `${data["address"]}`,
-        `${data["address2"]}`,
-        `${data["state"]}`,
-        `${data["city"]}`,
-        `${data["selected-items"]}`
+        data["image"],
+        data["name"],
+        data["address"],
+        data["address2"],
+        data["state"],
+        data["city"],
+        data["selected-items"]
     ]
     
     db.run(query, values, function(err) {
         if (err) {
-            console.log(err)
+            return res.send("Erro no cadastro!")
         }
         console.log("cadastrado com sucesso")
+
+        return res.render("create-point.html", { saved: true })
     })
 
 })
 
 server.get("/search-results", (req, res) => {
-    db.all("SELECT * FROM places", function(err, rows) {
+    const search = req.query.search
+
+    if (search == "") {
+        return res.render("search-results.html", { total: 0 })
+    }
+
+    db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function(err, rows) {
         if (err) {
             console.log(err)
         }
         const total = rows.length
-        return res.render("search-results.html", { places: rows, total })
+        return res.render("search-results.html", { places: rows, total: total })
     })
 })

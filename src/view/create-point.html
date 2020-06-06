@@ -7,9 +7,10 @@
 
 {% block styles %}
     <link rel="stylesheet" href="/styles/create-point.css">
+    <link rel="stylesheet" href="styles/modal.css">
 {% endblock styles %}
 
-{% block content %}         
+{% block content %}
     {% include "partials/page-header.html" %}
     <main>
         <form action="/savepoint" method="POST">
@@ -95,6 +96,12 @@
         </form>
     </main>
 {% endblock content %}
+
+{% if saved %}
+    {% block modal %}
+        {% include "partials/create-point-modal.html" %}}
+    {% endblock modal %}
+{% endif %}
 
 {% block scripts %}
     <script src="/scripts/create-point.js"></script>

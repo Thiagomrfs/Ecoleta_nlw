@@ -1,9 +1,14 @@
+body {
+    background-color: white;
+}
+
 body::after {
     content: "";
-    background-color: white;
-    position: fixed;
-    top: 260px;
+    background-color: #f0f0f5;
+    position: absolute;
+    top: 0;
     bottom: 0;
+    height: 16rem;
     left: 0;
     right: 0;
     z-index: -1;
@@ -58,6 +63,13 @@ main .cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
+}
+
+main .card {
+    background-color: #8989942f;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
 main .card img {
